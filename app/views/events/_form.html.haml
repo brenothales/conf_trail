@@ -1,0 +1,16 @@
+= simple_form_for @event, html: {class: 'form-horizontal'} do |f|
+  = f.input :name
+  = f.input :event_type_id, collection: @event_types#.map{|c| [c.name, c.id]}
+  = f.input :short_description
+  = f.input :description
+  = f.input :website
+  - if @event.image.present?
+    = image_tag @event.image.url(:thumb)
+  = f.input :image, as: :file
+  = f.input :address
+  = f.input :city
+  = f.input :price
+
+  .form-actions
+    = f.submit t('.save', :default => t("helpers.links.save")), class: 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), events_path, :class => 'btn'
