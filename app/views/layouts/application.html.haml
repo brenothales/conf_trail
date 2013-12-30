@@ -19,10 +19,11 @@
     = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
     = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
 
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js'
     = javascript_include_tag "application"
 
 
-  %body
+  %body{'ng-app' => ''}
     .container
       %header 
         .row

@@ -238,7 +238,8 @@ pt-BR:
         website: Website
         image: Imagem
         address: Endereço
-        city: Cidade
+        city_id: Cidade
+        province: Estado
         price: Preço
         created_at: Criado em
         event_type_id: Tipo do evento

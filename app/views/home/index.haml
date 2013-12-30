@@ -8,9 +8,13 @@
     %h2 Não achou o que procura?
     %p Cadastre o evento agora mesmo! Assim que ele for aprovado será publicado no site.
 
-    = simple_form_for @event do |f|
+    = simple_form_for @event, url: root_path do |f|
       = f.input :name, placeholder: 'RubyConf Brasil'
       = f.input :event_type_id, collection: @event_types
-      = f.input :city, placeholder: 'São Paulo'
+      = f.input :province, collection: @provinces, ng: { model: 'selected_province'}
+
+      - @provinces.each do |c|
+        .wrapper{ng: {show: "#{c.id} == selected_province"}}
+          = f.input :city_id, collection: c.cities, ng: {disabled: "(#{c.id} != selected_province)"}
 
       = f.submit t('helpers.links.create'), class: 'btn btn-primary'

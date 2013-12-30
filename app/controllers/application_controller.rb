@@ -3,9 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :event_types
+  before_filter :load_variables
 
-  def event_types
+  def load_variables
     @event_types = EventType.all
+    @provinces = Province.all.includes(:cities)
   end
 end

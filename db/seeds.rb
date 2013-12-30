@@ -10,3 +10,5 @@ EventType.create! name: 'Conferência'
 EventType.create! name: 'Hackaton'
 EventType.create! name: 'Seminário'
 EventType.create! name: 'Encontro de Grupo Local'
+
+ProvincesAndCities.populate

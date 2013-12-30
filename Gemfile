@@ -36,6 +36,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'quiet_assets'
+end
+
 gem 'haml'
 # Use HAML in Rails generators
 gem 'haml-rails'
@@ -58,6 +62,7 @@ gem "paperclip", "~> 3.0"
 gem 'awesome_print', :require => 'ap'
 
 gem 'simple_form', '~> 3.0.0'
+gem 'simple_form_angular'
 
 gem 'pry'
 gem 'pry-rails'
